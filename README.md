@@ -46,12 +46,16 @@ Run the master Playbook with: ``ansible-playbook netconf-backup.yml``
 playbooks ``netconfig-backup-send-mail.yml`` and/or ``netconfig-backup-msg-slack.yml``.
 
 - If you are going to synchronize the configuration backups with GitHub:
-    - Remember to never manually modify the configuration files in the backup directory.
-    - Then you have to startup the local repository, go the backups directory and type ``git init``.
-    - Go to GitHub and create the repository ``backups``.
+    - Remember to never manually modify the configuration files in the directory ``backups/github-staging``.
+    - Set you user parameters with ``git config --global user.name "FIRST_NAME LAST_NAME"`` and 
+    ``git config --global user.email "MY_NAME@example.com"``
+    - Then you have to create the local repository, go the ``backups/github-staging`` directory and type ``git init``.
+    - Add some file to the directory and add it to Git staging area with ``git add .``.
+    - Create a first commit to initialize the repo with ``git commit -m "first commit"``.
+    - Go to GitHub and create the repository ``backups`` or the name you want for it.
     - Set it as PRIVATE and the end it will give you a Git URL.
-    - Now link your local repository with the remote that you've just created with ``git remote add master <remote_repo_url>``.
-
+    - Now link your local repository with the remote that you've just created with ``git remote add origin <remote_repo_url>``.
+    - Set the repo URL in the configuration section of the main playbook ``netconf-backup``.
 - Add periodic execution via ``crontab -e``. With something like 
 ``0 2 * * * ansible-playbook /your_path_to/netconf-backup.yml``
 for everydayexecution at 2 AM.

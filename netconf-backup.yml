@@ -16,13 +16,23 @@
     alert_slack: "no"
 
     alert_mail: "no"
-    mail_host: smtp.live.com
+    mail_host: smtp.xxx.com
     mail_port: 587
-    mail_to: aegiacometti@hotmail.com
+    mail_to: support@xxx.com
 
-    github_backup: "yes"
-    git_repository: "{{ backup_dir }}"
+    github_backup: "no"
+    git_local_repository: "{{ backup_dir }}/github-staging"
+    # For the remote repository do not use the FQDN.
+    #  Example:
+    #    for "https://github.com/aegiacometti/backups.git"
+    #    use: git_remote_repository: "/aegiacometti/backups.git"
+    git_remote_repository: "/xxx/yyy.git"
     git_branch: master
+
+    clean_patterns:
+    - "\\A[^!]*"
+    - "ntp clock-period..."
+    - "! Last configuration change..."
 
   # Comment/delete the tasks of the platform that you are not interested in backing up the device configuration files
   tasks:

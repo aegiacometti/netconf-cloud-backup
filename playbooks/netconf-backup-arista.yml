@@ -5,12 +5,16 @@
   ignore_errors: yes
 
 - name: Arista - Save the output
+  vars:
+    clean_config: "{{ output.stdout[0]|clean_config(clean_patterns) }}"
   command:
     argv:
       - python3
       - scripts/netconf-backup.py
       - "{{ inventory_hostname }}"
-      - "{{ output.stdout[0] }}"
+      - "{{ clean_config }}"
+      - "{{ backup_dir }}"
+      - "{{ keep_local_history }}"
       - "{{ historic_files_to_keep }}"
   delegate_to: localhost
   when: output.failed == false

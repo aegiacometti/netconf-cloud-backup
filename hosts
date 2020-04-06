@@ -1,5 +1,5 @@
 [network]
-isp-internet ansible_host=10.0.14.2 ansible_network_os=ios platform=ios
+isp-internet ansible_host=10.0.14.1 ansible_network_os=ios platform=ios
 hq-core ansible_host=10.0.12.2 ansible_network_os=ios platform=ios
 #hq-access ansible_host=10.0.13.2 ansible_network_os=eos platform=eos
 
