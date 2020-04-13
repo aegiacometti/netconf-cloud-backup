@@ -60,6 +60,13 @@ playbooks ``netconfig-backup-send-mail.yml`` and/or ``netconfig-backup-msg-slack
 ``0 2 * * * ansible-playbook /your_path_to/netconf-backup.yml``
 for everydayexecution at 2 AM.
 
+- If you want to integrate the messages from GitHub into Slack:
+    - Go to https://slack.github.com/ and click the button **Add to Slack**. The setup
+    will take you through a couple of simple steps to add the integration in the Slack
+    Channel you are using for the backups.
+    - Then go to your Slack Channel and type '/github subscribe owner/repository'
+    
+
 ### Special SSH connectivity notes
 
 If normal prompt ssh connection don't work, it will not work with Ansible either. So first check 
