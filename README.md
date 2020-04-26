@@ -42,8 +42,8 @@ Run the master Playbook with: ``ansible-playbook netconf-backup.yml``
 - To modify the number of historic file to keep change that variable ``historic_files_to_keep`` in the master Playbook ``netconfig-backup.yml``.
 
 - If you want the alerts to be sent when a configuration backup fail, set to **"yes"** the variables .
-"alert_mail" and/or "alert_slack" at the master Playbook ``netconfig-backup.yml``. And set your mail details and/or Slack webhook at the
-playbooks ``netconfig-backup-send-mail.yml`` and/or ``netconfig-backup-msg-slack.yml``.
+"alert_mail" and/or "alert_slack" and/or "github" at the master Playbook ``netconfig-backup.yml``. And set your mail details and/or Slack webhook and/or GitHub credentials at the
+file ``group_vars/all.yml``.
 
 - If you are going to synchronize the configuration backups with GitHub:
     - Remember to never manually modify the configuration files in the directory ``backups/github-staging``.
