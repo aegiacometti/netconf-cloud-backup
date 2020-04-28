@@ -1,11 +1,12 @@
 # Simple CLOUD configuration backup with alerts for Cisco IOS, NxOS, ASA, Arista and F5
 
 Complete CLOUD backup setup with Ansible and Python3, and alerts via Slack and/or eMail.
-
  
 - The master Playbook ``netconfig-backup.yml`` imports the Playbooks to do everything.
 
 - Each Playbook store the configuration files locally and optionally on GitHub. *(check Optional Setup)*
+
+[![Check the short video](https://img.youtube.com/vi/4YRJVrPvktQ/0.jpg)](https://www.youtube.com/watch?v=4YRJVrPvktQ)
 
 - **Local backup**:
     - Will get and store de configuration files in the ``./backup`` directory, with format "hostname-date-time".
