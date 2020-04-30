@@ -6,6 +6,8 @@ Complete CLOUD backup setup with Ansible and Python3, and alerts via Slack and/o
 
 - Each Playbook store the configuration files locally and optionally on GitHub. *(check Optional Setup)*
 
+
+Check the short video<br/>
 [![Check the short video](https://img.youtube.com/vi/4YRJVrPvktQ/0.jpg)](https://www.youtube.com/watch?v=4YRJVrPvktQ)
 
 - **Local backup**:
