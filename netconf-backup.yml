@@ -63,6 +63,10 @@
       import_tasks: playbooks/netconf-backup-f5.yml
       when: platform == 'f5'
 
+    - name: FortiOS
+      import_tasks: playbooks/netconf-backup-fortios.yml
+      when: platform == 'fortios'
+
     - name: Push configuration changes to GitHub
       import_tasks: playbooks/netconf-backup-git-sync.yml
       when: github_backup == 'yes'

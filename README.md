@@ -1,4 +1,4 @@
-# Simple CLOUD configuration backup with alerts for Cisco IOS, NxOS, ASA, Arista and F5
+# Simple CLOUD configuration backup with alerts for Cisco IOS, NxOS, ASA, Arista, F5 and FortiOS
 
 Complete CLOUD backup setup with Ansible and Python3, and alerts via Slack and/or eMail.
  
