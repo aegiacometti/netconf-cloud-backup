@@ -43,15 +43,14 @@ def backup_config(ip, username, password, full, path):
                 scp.get(config, path)
 
             except Exception as e:
-                return str(e)
+                response = str(e)
 
             else:
-                pass
+                response = 'ok'
 
-        return "ok"
+        return response
 
 
 if __name__ == '__main__':
     result = backup_config(ip_address, user, passwd, full_backup, backup_dir + "/" + filename)
     print(result)
-
